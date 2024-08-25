@@ -4,4 +4,4 @@
 
 Days | File | Link | 
 --- | --- |  --- |
-1 | 1-Days Installation & Setup | Click👆🏻
+1 | 1-Days Installation & Setup | [Click👆🏻](https://github.com/divakarkumarp/30-days-PyTorch/blob/main/1-Days%20Installation%20%26%20Setup.txt)
