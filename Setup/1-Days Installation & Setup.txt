@@ -1,0 +1,211 @@
+# This script sets up a PyTorch environment with CUDA support.
+
+# 1. Create a new Conda environment with Python 3.12.
+conda create -p venv python==3.12 -y
+
+# 2. Activate the environment. Replace "Pytorch" with the actual name of the environment.
+conda activate Pytorch
+
+# 3. Install PyTorch with CUDA support using the specified channels.
+# Follow the steps in the video for more details: 
+# URL: https://github.com/user-attachments/assets/68f3d684-224b-44d7-9d08-f2ca4120c14b
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+
+# 4. Launch the Python interpreter.
+python
+
+# 5. Import PyTorch.
+import torch
+
+# 6. Create a tensor with random values.
+x = torch.rand(3)
+
+# 7. Print the tensor values.
+print(x)
+
+# 8. Example output.
+# tensor([0.9273, 0.2826, 0.6496])
+
+# 9. Check if CUDA is available on your system.
+# Expected output: True (if CUDA is properly installed and supported)
+torch.cuda.is_available()
+True
+
+
+---------------------------------------- My Installation steps -------------------------------------------
+E:\Pytorch>conda activate Pytorch
+
+(Pytorch) E:\Pytorch>conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+Channels:
+ - pytorch
+ - nvidia
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: F:\conda\envs\Pytorch
+
+  added / updated specs:
+    - pytorch
+    - pytorch-cuda=12.4
+    - torchaudio
+    - torchvision
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    charset-normalizer-3.3.2   |     pyhd3eb1b0_0          44 KB
+    cuda-cccl-12.6.37          |                0          16 KB  nvidia
+    cuda-cccl_win-64-12.6.37   |                0         1.3 MB  nvidia
+    cuda-cudart-12.4.127       |                0        1004 KB  nvidia
+    cuda-cudart-dev-12.4.127   |                0         597 KB  nvidia
+    cuda-cupti-12.4.127        |                0        12.9 MB  nvidia
+    cuda-libraries-12.4.0      |                0           2 KB  nvidia
+    cuda-libraries-dev-12.4.0  |                0           2 KB  nvidia
+    cuda-nvrtc-12.4.127        |                0        78.0 MB  nvidia
+    cuda-nvrtc-dev-12.4.127    |                0        17.2 MB  nvidia
+    cuda-nvtx-12.4.127         |                0          41 KB  nvidia
+    cuda-opencl-12.6.37        |                0          16 KB  nvidia
+    cuda-opencl-dev-12.6.37    |                0          95 KB  nvidia
+    cuda-profiler-api-12.6.37  |                0          19 KB  nvidia
+    cuda-runtime-12.4.0        |                0           2 KB  nvidia
+    cuda-version-12.6          |                3          16 KB  nvidia
+    jpeg-9e                    |       h827c3e9_3         334 KB
+    libcublas-12.4.2.65        |                0          34 KB  nvidia
+    libcublas-dev-12.4.2.65    |                0       344.2 MB  nvidia
+    libcufft-11.2.0.44         |                0           6 KB  nvidia
+    libcufft-dev-11.2.0.44     |                0       189.5 MB  nvidia
+    libcurand-10.3.7.37        |                0        49.3 MB  nvidia
+    libcurand-dev-10.3.7.37    |                0         466 KB  nvidia
+    libcusolver-11.6.0.99      |                0          29 KB  nvidia
+    libcusolver-dev-11.6.0.99  |                0       112.0 MB  nvidia
+    libcusparse-12.3.0.142     |                0          13 KB  nvidia
+    libcusparse-dev-12.3.0.142 |                0       176.0 MB  nvidia
+    libjpeg-turbo-2.0.0        |       h196d8e1_0         618 KB
+    libnpp-12.2.5.2            |                0         310 KB  nvidia
+    libnpp-dev-12.2.5.2        |                0       139.2 MB  nvidia
+    libnvfatbin-12.6.20        |                0         375 KB  nvidia
+    libnvfatbin-dev-12.6.20    |                0         1.6 MB  nvidia
+    libnvjitlink-12.4.99       |                0        71.8 MB  nvidia
+    libnvjitlink-dev-12.4.99   |                0        14.3 MB  nvidia
+    libnvjpeg-12.3.1.89        |                0           5 KB  nvidia
+    libnvjpeg-dev-12.3.1.89    |                0         2.5 MB  nvidia
+    libuv-1.48.0               |       h827c3e9_0         322 KB
+    networkx-3.3               |  py312haa95532_0         3.0 MB
+    openjpeg-2.5.2             |       hae555c5_0         268 KB
+    pillow-10.4.0              |  py312h827c3e9_0        1008 KB
+    pytorch-2.4.0              |py3.12_cuda12.4_cudnn9_0        1.20 GB  pytorch
+    pytorch-cuda-12.4          |       h3fd98bf_6           7 KB  pytorch
+    pytorch-mutex-1.0          |             cuda           3 KB  pytorch
+    requests-2.32.3            |  py312haa95532_0         124 KB
+    torchaudio-2.4.0           |      py312_cu124         7.2 MB  pytorch
+    torchvision-0.19.0         |      py312_cu124         7.9 MB  pytorch
+    ------------------------------------------------------------
+                                           Total:        2.41 GB
+
+The following NEW packages will be INSTALLED:
+
+  blas               pkgs/main/win-64::blas-1.0-mkl
+  brotli-python      pkgs/main/win-64::brotli-python-1.0.9-py312hd77b12b_8
+  certifi            pkgs/main/win-64::certifi-2024.7.4-py312haa95532_0
+  charset-normalizer pkgs/main/noarch::charset-normalizer-3.3.2-pyhd3eb1b0_0
+  cuda-cccl          nvidia/win-64::cuda-cccl-12.6.37-0
+  cuda-cccl_win-64   nvidia/noarch::cuda-cccl_win-64-12.6.37-0
+  cuda-cudart        nvidia/win-64::cuda-cudart-12.4.127-0
+  cuda-cudart-dev    nvidia/win-64::cuda-cudart-dev-12.4.127-0
+  cuda-cupti         nvidia/win-64::cuda-cupti-12.4.127-0
+  cuda-libraries     nvidia/win-64::cuda-libraries-12.4.0-0
+  cuda-libraries-dev nvidia/win-64::cuda-libraries-dev-12.4.0-0
+  cuda-nvrtc         nvidia/win-64::cuda-nvrtc-12.4.127-0
+  cuda-nvrtc-dev     nvidia/win-64::cuda-nvrtc-dev-12.4.127-0
+  cuda-nvtx          nvidia/win-64::cuda-nvtx-12.4.127-0
+  cuda-opencl        nvidia/win-64::cuda-opencl-12.6.37-0
+  cuda-opencl-dev    nvidia/win-64::cuda-opencl-dev-12.6.37-0
+  cuda-profiler-api  nvidia/win-64::cuda-profiler-api-12.6.37-0
+  cuda-runtime       nvidia/win-64::cuda-runtime-12.4.0-0
+  cuda-version       nvidia/noarch::cuda-version-12.6-3
+  filelock           pkgs/main/win-64::filelock-3.13.1-py312haa95532_0
+  freetype           pkgs/main/win-64::freetype-2.12.1-ha860e81_0
+  idna               pkgs/main/win-64::idna-3.7-py312haa95532_0
+  intel-openmp       pkgs/main/win-64::intel-openmp-2023.1.0-h59b6b97_46320
+  jinja2             pkgs/main/win-64::jinja2-3.1.4-py312haa95532_0
+  jpeg               pkgs/main/win-64::jpeg-9e-h827c3e9_3
+  lcms2              pkgs/main/win-64::lcms2-2.12-h83e58a3_0
+  lerc               pkgs/main/win-64::lerc-3.0-hd77b12b_0
+  libcublas          nvidia/win-64::libcublas-12.4.2.65-0
+  libcublas-dev      nvidia/win-64::libcublas-dev-12.4.2.65-0
+  libcufft           nvidia/win-64::libcufft-11.2.0.44-0
+  libcufft-dev       nvidia/win-64::libcufft-dev-11.2.0.44-0
+  libcurand          nvidia/win-64::libcurand-10.3.7.37-0
+  libcurand-dev      nvidia/win-64::libcurand-dev-10.3.7.37-0
+  libcusolver        nvidia/win-64::libcusolver-11.6.0.99-0
+  libcusolver-dev    nvidia/win-64::libcusolver-dev-11.6.0.99-0
+  libcusparse        nvidia/win-64::libcusparse-12.3.0.142-0
+  libcusparse-dev    nvidia/win-64::libcusparse-dev-12.3.0.142-0
+  libdeflate         pkgs/main/win-64::libdeflate-1.17-h2bbff1b_1
+  libjpeg-turbo      pkgs/main/win-64::libjpeg-turbo-2.0.0-h196d8e1_0
+  libnpp             nvidia/win-64::libnpp-12.2.5.2-0
+  libnpp-dev         nvidia/win-64::libnpp-dev-12.2.5.2-0
+  libnvfatbin        nvidia/win-64::libnvfatbin-12.6.20-0
+  libnvfatbin-dev    nvidia/win-64::libnvfatbin-dev-12.6.20-0
+  libnvjitlink       nvidia/win-64::libnvjitlink-12.4.99-0
+  libnvjitlink-dev   nvidia/win-64::libnvjitlink-dev-12.4.99-0
+  libnvjpeg          nvidia/win-64::libnvjpeg-12.3.1.89-0
+  libnvjpeg-dev      nvidia/win-64::libnvjpeg-dev-12.3.1.89-0
+  libpng             pkgs/main/win-64::libpng-1.6.39-h8cc25b3_0
+  libtiff            pkgs/main/win-64::libtiff-4.5.1-hd77b12b_0
+  libuv              pkgs/main/win-64::libuv-1.48.0-h827c3e9_0
+  libwebp-base       pkgs/main/win-64::libwebp-base-1.3.2-h2bbff1b_0
+  lz4-c              pkgs/main/win-64::lz4-c-1.9.4-h2bbff1b_1
+  markupsafe         pkgs/main/win-64::markupsafe-2.1.3-py312h2bbff1b_0
+  mkl                pkgs/main/win-64::mkl-2023.1.0-h6b88ed4_46358
+  mkl-service        pkgs/main/win-64::mkl-service-2.4.0-py312h2bbff1b_1
+  mkl_fft            pkgs/main/win-64::mkl_fft-1.3.8-py312h2bbff1b_0
+  mkl_random         pkgs/main/win-64::mkl_random-1.2.4-py312h59b6b97_0
+  mpmath             pkgs/main/win-64::mpmath-1.3.0-py312haa95532_0
+  networkx           pkgs/main/win-64::networkx-3.3-py312haa95532_0
+  numpy              pkgs/main/win-64::numpy-1.26.4-py312hfd52020_0
+  numpy-base         pkgs/main/win-64::numpy-base-1.26.4-py312h4dde369_0
+  openjpeg           pkgs/main/win-64::openjpeg-2.5.2-hae555c5_0
+  pillow             pkgs/main/win-64::pillow-10.4.0-py312h827c3e9_0
+  pysocks            pkgs/main/win-64::pysocks-1.7.1-py312haa95532_0
+  pytorch            pytorch/win-64::pytorch-2.4.0-py3.12_cuda12.4_cudnn9_0
+  pytorch-cuda       pytorch/win-64::pytorch-cuda-12.4-h3fd98bf_6
+  pytorch-mutex      pytorch/noarch::pytorch-mutex-1.0-cuda
+  pyyaml             pkgs/main/win-64::pyyaml-6.0.1-py312h2bbff1b_0
+  requests           pkgs/main/win-64::requests-2.32.3-py312haa95532_0
+  sympy              pkgs/main/win-64::sympy-1.12-py312haa95532_0
+  tbb                pkgs/main/win-64::tbb-2021.8.0-h59b6b97_0
+  torchaudio         pytorch/win-64::torchaudio-2.4.0-py312_cu124
+  torchvision        pytorch/win-64::torchvision-0.19.0-py312_cu124
+  typing_extensions  pkgs/main/win-64::typing_extensions-4.11.0-py312haa95532_0
+  urllib3            pkgs/main/win-64::urllib3-2.2.2-py312haa95532_0
+  win_inet_pton      pkgs/main/win-64::win_inet_pton-1.1.0-py312haa95532_0
+  yaml               pkgs/main/win-64::yaml-0.2.5-he774522_0
+  zstd               pkgs/main/win-64::zstd-1.5.5-hd43e919_2
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+(Pytorch) E:\Pytorch>python
+Python 3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> x = torch.rand(3)
+>>> print(x)
+tensor([0.9273, 0.2826, 0.6496])
+>>> torch.cuda.is_available()
+True
+
